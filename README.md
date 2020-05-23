@@ -3,6 +3,8 @@ PowerDns (pdns) Api Vb.net examples
 
 <h2>Usage</h2>
 
+Note : Please install PowerDns.Client Nuget package !
+
 <b>Variables</b>
 
 Dim PowerDnsHostname As String = "127.0.0.1" // power dns server ip address
