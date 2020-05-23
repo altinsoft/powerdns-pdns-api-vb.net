@@ -67,7 +67,7 @@ Dim Ns4 As String = "ns4.your-nameserver.net"
     End Sub
     
 <h2>Delete Zone</h2>
-
+<pre><code>
 Async Function DeleteZone(ZoneName As String) As Task(Of String)
         Try
             Dim client = New PowerDnsClient(uri:=New Uri("http://" + PowerDnsHostname + ":8081/"), apiKey:=ApiSecret)
@@ -91,7 +91,7 @@ Private Async Sub Button2_Click(sender As Object, e As EventArgs) Handles Button
         Dim result As String = Await task
         MessageBox.Show(result)
 End Sub
-    
+    </pre></code>
 
 <h2>Add Record</h2>
 
