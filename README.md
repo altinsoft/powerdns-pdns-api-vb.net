@@ -174,7 +174,7 @@ End Sub
  End Function
 </br>
 Private Async Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Dim task As Task(Of String) = RecordUpdate("ddd.com", "www.ddd.com", "125.125.125.126", "125.125.125.127", RecordType.A)
+        Dim task As Task(Of String) = RecordUpdate("altinsoft.net", "www.altinsoft.net", "125.125.125.126", "125.125.125.127", RecordType.A)
         Dim result As String = Await task
         MessageBox.Show(result)
 End Sub
