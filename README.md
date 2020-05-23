@@ -143,3 +143,44 @@ Private Async Sub Button7_Click(sender As Object, e As EventArgs) Handles Button
         MessageBox.Show(result)
 End Sub
  </pre></code>    
+ 
+ <h2>Update Record</h2>
+ <pre><code>
+  Async Function RecordUpdate(ZoneName As String, RecordName As String, OldContent As String, NewContent As String, RecordType As RecordType) As Task(Of String)
+        Try
+            Dim client = New PowerDnsClient(uri:=New Uri("http://" + PowerDnsHostname + ":8081/"), apiKey:=ApiSecret)
+            Dim zonesEndpoint = client.Servers("localhost").Zones
+            Dim recordSet As RecordSet = Await zonesEndpoint.Item(ZoneName).GetRecordSetAsync(RecordName)
+            recordSet.Type = RecordType
+            Dim IsError As Boolean = True
+            For i = 0 To recordSet.Records.Count - 1
+                Dim a As New Record
+                a = recordSet.Records(i)
+                If a.Content = OldContent Then
+                    IsError = False
+                    a.Content = NewContent
+                End If
+            Next
+            If IsError Then
+                Return "Record Not Found !"
+            Else
+                recordSet.ChangeType = ChangeType.Replace
+                Await zonesEndpoint.Item(ZoneName).PatchRecordSetAsync(recordSet)
+                Return "ok"
+            End If
+        Catch ex As Exception
+            Return ex.ToString.ToLower
+        End Try
+ End Function
+</br>
+Private Async Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Dim task As Task(Of String) = RecordUpdate("ddd.com", "www.ddd.com", "125.125.125.126", "125.125.125.127", RecordType.A)
+        Dim result As String = Await task
+        MessageBox.Show(result)
+End Sub
+ </pre></code>  
+ 
+ 
+ AltinSoft Information Technologies
+ www.altinsoft.net
+ 
