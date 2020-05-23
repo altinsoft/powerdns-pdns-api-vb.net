@@ -85,7 +85,7 @@ Async Function DeleteZone(ZoneName As String) As Task(Of String)
             End If
         End Try
 End Function
-
+</br>
 Private Async Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim task As Task(Of String) = DeleteZone(ZName.Text)
         Dim result As String = Await task
@@ -113,7 +113,7 @@ Async Function RecordAdd(ZoneName As String, RecordName As String, Content As St
             Return ex.ToString.ToLower
         End Try
 End Function
-
+</br>
 Private Async Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Dim task As Task(Of String) = RecordAdd("altinsoft.net", "www.altinsoft.net", "125.125.125.126", RecordType.A)
         Dim result As String = Await task
@@ -136,7 +136,7 @@ Async Function RecordDelete(ZoneName As String, RecordName As String, RecordType
             Return ex.ToString.ToLower
         End Try
 End Function
-
+</br>
 Private Async Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         Dim task As Task(Of String) = RecordDelete("altinsoft.com", "www.altinsoft.com", RecordType.A)
         Dim result As String = Await task
