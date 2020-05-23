@@ -4,10 +4,15 @@ PowerDns (pdns) Api Vb.net examples
 <h2>Usage</h2>
 
  Dim PowerDnsHostname As String = "127.0.0.1" // power dns server ip address
+ 
  Dim ApiSecret As String = "api secret key"
+ 
  Dim Ns1 As String = "ns1.your-nameserver.net"
+ 
  Dim Ns2 As String = "ns2.your-nameserver.net"
+ 
  Dim Ns3 As String = "ns3.your-nameserver.net"
+ 
  Dim Ns4 As String = "ns4.your-nameserver.net"
  
  
