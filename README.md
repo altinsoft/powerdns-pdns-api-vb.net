@@ -40,7 +40,7 @@ Dim Ns4 As String = "ns4.your-nameserver.net"
         ReadALLZones()
     End Sub
     
-<h2>Create Zone</h2>
+<h2>Create Zone (powerdns api create zone example)</h2>
 
     Async Function CreateZone(ZoneName As String) As Task(Of String)
         Try
@@ -95,7 +95,7 @@ Private Async Sub Button2_Click(sender As Object, e As EventArgs) Handles Button
 End Sub
     </pre></code>
 
-<h2>Add Record</h2>
+<h2>Add Record (powerdns api create record example)</h2>
 <pre><code>
 Async Function RecordAdd(ZoneName As String, RecordName As String, Content As String, RecordType As RecordType) As Task(Of String)
         Try
