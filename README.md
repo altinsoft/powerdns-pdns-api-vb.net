@@ -94,7 +94,7 @@ End Sub
     </pre></code>
 
 <h2>Add Record</h2>
-
+<pre><code>
 Async Function RecordAdd(ZoneName As String, RecordName As String, Content As String, RecordType As RecordType) As Task(Of String)
         Try
             Dim client = New PowerDnsClient(uri:=New Uri("http://" + PowerDnsHostname + ":8081/"), apiKey:=ApiSecret)
@@ -115,13 +115,13 @@ Async Function RecordAdd(ZoneName As String, RecordName As String, Content As St
 End Function
 
 Private Async Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        Dim task As Task(Of String) = RecordAdd("domain.com", "www.domain.com", "125.125.125.126", RecordType.A)
+        Dim task As Task(Of String) = RecordAdd("altinsoft.net", "www.altinsoft.net", "125.125.125.126", RecordType.A)
         Dim result As String = Await task
         MessageBox.Show(result)
 End Sub
-
+ </pre></code>
 <h2>Delete Record</h2>
-
+ <pre><code>
 Async Function RecordDelete(ZoneName As String, RecordName As String, RecordType As RecordType) As Task(Of String)
         Try
             Dim client = New PowerDnsClient(uri:=New Uri("http://" + PowerDnsHostname + ":8081/"), apiKey:=ApiSecret)
@@ -138,8 +138,8 @@ Async Function RecordDelete(ZoneName As String, RecordName As String, RecordType
 End Function
 
 Private Async Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        Dim task As Task(Of String) = RecordDelete("ddd.com", "www.ddd.com", RecordType.A)
+        Dim task As Task(Of String) = RecordDelete("altinsoft.com", "www.altinsoft.com", RecordType.A)
         Dim result As String = Await task
         MessageBox.Show(result)
 End Sub
-    
+ </pre></code>    
