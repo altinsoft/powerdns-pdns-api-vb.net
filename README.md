@@ -1,5 +1,5 @@
 # powerdns-pdns-api-vb.net
-PowerDns (pdns) Api Vb.net examples
+PowerDns (pdns) Api Vb.net and C# examples
 
 <h2>Usage</h2>
 
